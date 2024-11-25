@@ -213,15 +213,11 @@ Install Microsoft SQL Server for the database.
 Ensure a compatible IDE like IntelliJ IDEA or Eclipse.
 Setup Steps
 Clone the repository:
-bash
-Copy code
 git clone https://github.com/your-repo-name/scholarship-management-system.git
 Import the project into your IDE as a Maven project.
 Configure the DatabaseUtil class with your database credentials.
 Run the database scripts provided in schema.sql to set up the database.
 Build and run the project using Maven:
-bash
-Copy code
 mvn clean package
 java -jar target/proj.jar
 Deployment
@@ -233,15 +229,9 @@ We welcome contributions! Follow these steps to contribute:
 
 Fork the repository.
 Create a feature branch:
-bash
-Copy code
 git checkout -b feature-branch
 Commit your changes:
-bash
-Copy code
 git commit -m "Add a new feature"
 Push to your branch:
-bash
-Copy code
 git push origin feature-branch
 Create a Pull Request.
