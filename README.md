@@ -213,7 +213,7 @@ Install Microsoft SQL Server for the database.
 Ensure a compatible IDE like IntelliJ IDEA or Eclipse.
 Setup Steps
 Clone the repository:
-git clone https://github.com/your-repo-name/scholarship-management-system.git
+git clone https://github.com/Huzaifanasir95/ScholarshipManager.git
 Import the project into your IDE as a Maven project.
 Configure the DatabaseUtil class with your database credentials.
 Run the database scripts provided in schema.sql to set up the database.
