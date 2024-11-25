@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="application.ViewScholarshipsController" prefHeight="600.0" prefWidth="800.0">
+    <VBox spacing="10" layoutX="50" layoutY="50" prefWidth="700.0">
+        <!-- Static Search Bar -->
+        <TextField fx:id="searchField" promptText="Search (UI Only)" editable="false" />
+
+        <!-- Static Scholarships Table -->
+        <TableView prefHeight="500.0" prefWidth="700.0">
+            <columns>
+                <TableColumn text="ID" prefWidth="100.0" />
+                <TableColumn text="Scholarship Name" prefWidth="300.0" />
+                <TableColumn text="Amount" prefWidth="150.0" />
+                <TableColumn text="Eligibility" prefWidth="150.0" />
+            </columns>
+        </TableView>
+    </VBox>
+</AnchorPane>

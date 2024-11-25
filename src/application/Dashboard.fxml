@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="application.DashboardController" prefHeight="600.0" prefWidth="800.0">
+
+    <!-- Top Navigation Bar -->
+    <AnchorPane prefHeight="50.0" style="-fx-background-color: #1E2A38;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <!-- Slide Toggle Button -->
+        <Button fx:id="toggleButton" text="☰" onAction="#toggleSidePanel" style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px;"
+                AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+
+        <!-- Title -->
+        <Label text="Student Dashboard" style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"
+               AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="10.0" />
+    </AnchorPane>
+
+    <!-- Sliding Side Panel -->
+    <VBox fx:id="sidePanel" spacing="20.0" prefWidth="200.0" style="-fx-background-color: #2A3A48; -fx-padding: 15; -fx-border-color: #1E90FF; -fx-border-width: 2;"
+          AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="50.0" AnchorPane.bottomAnchor="0.0">
+        
+        <!-- Welcome Section -->
+        <VBox style="-fx-background-color: #1E2A38; -fx-border-radius: 5; -fx-padding: 10;">
+            <Label fx:id="welcomeStudentLabel" text="Welcome, Student!" 
+       style="-fx-font-size: 14px; -fx-text-fill: #4CAF50;" />
+
+            <Label text="Your Dashboard" style="-fx-font-size: 12px; -fx-text-fill: #CCCCCC;" />
+        </VBox>
+
+        <Separator style="-fx-background-color: #CCCCCC;" />
+
+<!-- Quick Info Section -->
+<VBox spacing="10.0" style="-fx-background-color: #3A4A5A; -fx-border-radius: 5; -fx-padding: 10;">
+    <Label text="Quick Info" style="-fx-font-size: 14px; -fx-text-fill: #4CAF50;" />
+    <Label fx:id="scholarshipsAvailableLabel" text="Scholarships Available: Loading..." style="-fx-font-size: 12px; -fx-text-fill: white;" />
+    <Label fx:id="applicationsLabel" text="Your Applications: Loading..." style="-fx-font-size: 12px; -fx-text-fill: white;" />
+    <Label fx:id="acceptedApplicationsLabel" text="Accepted Applications: Loading..." style="-fx-font-size: 12px; -fx-text-fill: white;" />
+</VBox>
+
+        <Separator style="-fx-background-color: #CCCCCC;" />
+
+        <!-- Side Panel Buttons -->
+        <VBox spacing="10.0">
+            <Button text="Scholarship Options" onAction="#handleScholarshipOptions"
+                    style="-fx-background-color: #007BFF; -fx-text-fill: white; -fx-font-weight: bold;" />
+            <Button text="Track Application Status" onAction="#handleTrackApplicationStatus"
+                    style="-fx-background-color: #28A745; -fx-text-fill: white; -fx-font-weight: bold;" />
+            <Button text="Notifications" onAction="#handleNotifications"
+                    style="-fx-background-color: #FF5733; -fx-text-fill: white; -fx-font-weight: bold;" />
+            <Button text="Application History" onAction="#handleApplicationHistory"
+                    style="-fx-background-color: #6C757D; -fx-text-fill: white; -fx-font-weight: bold;" />
+        </VBox>
+
+        <Separator style="-fx-background-color: #CCCCCC;" />
+
+        <!-- Manage Account Button -->
+        <Button text="Manage Account" onAction="#showManageAccount"
+                style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;" />
+
+        <!-- Logout Button -->
+        <Button text="Logout" onAction="#handleLogout"
+                style="-fx-background-color: #DC3545; -fx-text-fill: white; -fx-font-weight: bold;" />
+    </VBox>
+
+    <!-- Main Content Area -->
+    <VBox fx:id="mainContent" spacing="20.0" style="-fx-padding: 20;"
+          AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="50.0" AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0">
+
+        <!-- Welcome Section -->
+        <HBox spacing="10.0" alignment="CENTER_LEFT" style="-fx-padding: 10; -fx-background-color: #EAF4FC; -fx-border-color: #1E90FF; -fx-border-width: 2;">
+            <Label text="Welcome to Scholarship Finder Dashboard!" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+        </HBox>
+
+<!-- Scholarship Statistics Section -->
+<VBox spacing="10.0" style="-fx-padding: 10; -fx-background-color: #F9F9F9; -fx-border-color: #1E90FF; -fx-border-width: 2;">
+    <Label text="Scholarship Statistics" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+    
+    <!-- Scholarship Statistics -->
+    <HBox spacing="20.0" alignment="CENTER">
+        <VBox alignment="CENTER">
+            <Label text="Total Scholarships Available" style="-fx-font-size: 14px;" />
+            <Label fx:id="scholarshipsAvailableLabel" text="Loading..." style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #007BFF;" />
+        </VBox>
+        <VBox alignment="CENTER">
+            <Label text="Your Applications" style="-fx-font-size: 14px;" />
+            <Label fx:id="applicationsLabel" text="Loading..." style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #28A745;" />
+        </VBox>
+        <VBox alignment="CENTER">
+            <Label text="Applications Accepted" style="-fx-font-size: 14px;" />
+            <Label fx:id="acceptedApplicationsLabel" text="Loading..." style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #FF5733;" />
+        </VBox>
+    </HBox>
+</VBox>
+
+
+        <!-- Recent Notifications Section -->
+<!-- Recent Notifications Section -->
+<VBox spacing="10.0" style="-fx-padding: 10; -fx-background-color: #FEFBEA; -fx-border-color: #F1C232; -fx-border-width: 2;">
+    <Label text="Recent Notifications" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+    <VBox fx:id="notificationsBox" spacing="5.0">
+        <!-- Notifications will be dynamically added here -->
+    </VBox>
+</VBox>
+
+
+        <!-- Quick Actions Section -->
+        <VBox spacing="10.0" style="-fx-padding: 10; -fx-background-color: #F4F4F4; -fx-border-color: #CCCCCC; -fx-border-width: 2;">
+            <Label text="Quick Actions" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+            <HBox spacing="10.0">
+                <Button text="Apply for a Scholarship" onAction="#handleScholarshipOptions"
+                        style="-fx-background-color: #007BFF; -fx-text-fill: white; -fx-font-weight: bold;" />
+                <Button text="Track Application Status" onAction="#handleTrackApplicationStatus"
+                        style="-fx-background-color: #28A745; -fx-text-fill: white; -fx-font-weight: bold;" />
+                <Button text="View Notifications" onAction="#handleNotifications"
+                        style="-fx-background-color: #FF5733; -fx-text-fill: white; -fx-font-weight: bold;" />
+            </HBox>
+        </VBox>
+
+    </VBox>
+    
+
+</AnchorPane>

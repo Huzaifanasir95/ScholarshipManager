@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="application.ApplicationHistoryController" prefHeight="600.0" prefWidth="800.0">
+
+    <!-- Header Section -->
+    <VBox spacing="10.0" style="-fx-background-color: #1E2A38; -fx-padding: 15; -fx-border-color: #4CAF50; -fx-border-width: 0 0 3 0;"
+          AnchorPane.topAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <Label text="Application History" style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;" />
+        <HBox spacing="10.0">
+            <Button text="Back to Dashboard" onAction="#goBackToDashboard"
+                    style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;" />
+            <TextField fx:id="searchBar" promptText="Search Application History..." onKeyTyped="#handleSearch"
+                       style="-fx-background-color: white; -fx-border-color: #CCCCCC; -fx-border-radius: 5; -fx-padding: 5;" />
+        </HBox>
+    </VBox>
+
+    <!-- Scrollable Application History -->
+    <ScrollPane fitToWidth="true" fitToHeight="true" style="-fx-background-color: transparent; -fx-padding: 10;"
+                AnchorPane.topAnchor="100.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+        <GridPane fx:id="applicationGrid" hgap="20.0" vgap="20.0"
+                  style="-fx-padding: 10; -fx-background-color: #F9F9F9; -fx-border-color: #CCCCCC; -fx-border-width: 2; -fx-border-radius: 5;">
+            <!-- Application entries will be dynamically added here -->
+        </GridPane>
+    </ScrollPane>
+
+    <!-- Footer Section -->
+    <VBox spacing="10.0" alignment="CENTER" style="-fx-background-color: #1E2A38; -fx-padding: 10; -fx-border-color: #4CAF50; -fx-border-width: 3 0 0 0;"
+          AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <Label text="Powered by Scholarship Manager" style="-fx-text-fill: #CCCCCC; -fx-font-size: 12px;" />
+    </VBox>
+</AnchorPane>

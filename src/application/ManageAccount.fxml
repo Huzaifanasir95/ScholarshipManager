@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="application.ManageAccountController"
+            style="-fx-background-color: #f9f9f9;">
+
+    <VBox spacing="20.0" alignment="CENTER" style="-fx-padding: 30; -fx-background-color: #ffffff; -fx-border-color: #CCCCCC; -fx-border-width: 1; -fx-border-radius: 10;"
+          AnchorPane.topAnchor="20.0" AnchorPane.bottomAnchor="20.0"
+          AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+
+        <!-- Header -->
+        <Label text="Manage Account" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #1E2A38;" />
+
+        <!-- Name Section -->
+        <HBox spacing="10.0" style="-fx-padding: 10;">
+            <Label text="Name:" style="-fx-font-size: 14px; -fx-text-fill: #555555; -fx-min-width: 120px;" />
+            <TextField fx:id="nameField" editable="false" style="-fx-font-size: 14px; -fx-padding: 5; -fx-border-radius: 5;" />
+            <Button text="Change" onAction="#handleChangeName"
+                    style="-fx-background-color: #007BFF; -fx-text-fill: white; -fx-font-weight: bold; -fx-border-radius: 5;" />
+        </HBox>
+
+        <!-- Email Section -->
+        <HBox spacing="10.0" style="-fx-padding: 10;">
+            <Label text="Email:" style="-fx-font-size: 14px; -fx-text-fill: #555555; -fx-min-width: 120px;" />
+            <TextField fx:id="emailField" editable="false" style="-fx-font-size: 14px; -fx-padding: 5; -fx-border-radius: 5;" />
+            <Button text="Change" onAction="#handleChangeEmail"
+                    style="-fx-background-color: #007BFF; -fx-text-fill: white; -fx-font-weight: bold; -fx-border-radius: 5;" />
+        </HBox>
+
+        <!-- Password Section -->
+        <VBox spacing="10.0" style="-fx-padding: 10;">
+            <HBox spacing="10.0">
+                <Label text="Password:" style="-fx-font-size: 14px; -fx-text-fill: #555555; -fx-min-width: 120px;" />
+                <PasswordField fx:id="passwordField" editable="false"
+                               style="-fx-font-size: 14px; -fx-padding: 5; -fx-border-radius: 5;" />
+                <TextField fx:id="visiblePasswordField" editable="false" visible="false" managed="false"
+                           style="-fx-font-size: 14px; -fx-padding: 5; -fx-border-radius: 5;" />
+                <CheckBox text="Show Password" onAction="#toggleShowPassword"
+                          style="-fx-font-size: 12px; -fx-text-fill: #555555;" />
+                <Button text="Change" onAction="#handleChangePassword"
+                        style="-fx-background-color: #007BFF; -fx-text-fill: white; -fx-font-weight: bold; -fx-border-radius: 5;" />
+            </HBox>
+        </VBox>
+
+        <!-- Action Buttons -->
+        <HBox spacing="20.0" alignment="CENTER" style="-fx-padding: 20;">
+            <Button text="Save Changes" onAction="#handleSaveChanges"
+                    style="-fx-background-color: #28A745; -fx-text-fill: white; -fx-font-weight: bold; -fx-border-radius: 5; -fx-padding: 10;" />
+            <Button text="Cancel" onAction="#handleCancel"
+                    style="-fx-background-color: #DC3545; -fx-text-fill: white; -fx-font-weight: bold; -fx-border-radius: 5; -fx-padding: 10;" />
+            <Button text="Back to Dashboard" onAction="#handleBackToDashboard"
+                    style="-fx-background-color: #6C757D; -fx-text-fill: white; -fx-font-weight: bold; -fx-border-radius: 5; -fx-padding: 10;" />
+        </HBox>
+
+        <!-- Footer -->
+        <Label text="Powered by Scholarship Manager" style="-fx-font-size: 12px; -fx-text-fill: #999999;" alignment="CENTER" />
+    </VBox>
+</AnchorPane>

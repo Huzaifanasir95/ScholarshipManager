@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="application.AdminDashboardController" prefHeight="600.0" prefWidth="800.0"
+            style="-fx-background-color: #F4F4F4;">
+
+    <!-- Top Navigation Bar -->
+    <AnchorPane prefHeight="50.0" style="-fx-background-color: #1E2A38;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <!-- Slide Toggle Button -->
+        <Button fx:id="toggleButton" text="☰" onAction="#toggleSidePanel" style="-fx-text-fill: white; -fx-font-weight: bold;"
+                AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+    </AnchorPane>
+
+    <!-- Sliding Side Panel -->
+    <VBox fx:id="sidePanel" spacing="10.0" prefWidth="200.0"
+          style="-fx-background-color: #2A3A48; -fx-padding: 10; -fx-border-color: #1E90FF; -fx-border-width: 2;"
+          AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="50.0" AnchorPane.bottomAnchor="0.0">
+        <Label fx:id="welcomeLabel" text="Welcome, Admin!" 
+           style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: white; -fx-padding: 5;" />
+
+        <Label text="Your Dashboard" style="-fx-font-size: 12px; -fx-text-fill: lightgray; -fx-padding: 5;" />
+        
+        <Button text="Manage Scholarships" onAction="#handleManageScholarships"
+                style="-fx-background-color: #007BFF; -fx-text-fill: white; -fx-font-weight: bold;" />
+        <Button text="Approve/Reject Applications" onAction="#handleApproveRejectApplications"
+                style="-fx-background-color: #28A745; -fx-text-fill: white; -fx-font-weight: bold;" />
+        <Button text="Generate Reports" onAction="#handleGenerateReports"
+                style="-fx-background-color: #6C757D; -fx-text-fill: white; -fx-font-weight: bold;" /> <!-- Updated color -->
+
+        <!-- Divider -->
+        <Label style="-fx-border-color: white; -fx-border-width: 0 0 1 0; -fx-pref-width: 180; -fx-padding: 10;" />
+
+        <!-- Quick Info Section -->
+<!-- Quick Info Section -->
+<VBox spacing="5.0" style="-fx-background-color: #1E3947; -fx-padding: 10; -fx-border-radius: 5;">
+    <Label text="Quick Info" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: lightgray;" />
+    <Label text="Scholarships Available: " style="-fx-font-size: 12px; -fx-text-fill: white;" />
+    <Label fx:id="scholarshipsAvailableLabel" text="Loading..." style="-fx-font-size: 12px; -fx-text-fill: white;" />
+    <Label text="Pending Applications: " style="-fx-font-size: 12px; -fx-text-fill: white;" />
+    <Label fx:id="pendingApplicationsLabel" text="Loading..." style="-fx-font-size: 12px; -fx-text-fill: white;" />
+</VBox>
+
+        <!-- Manage Account Button -->
+        <Button text="Manage Account" onAction="#showManageAccount"
+                style="-fx-background-color: #28A745; -fx-text-fill: white; -fx-font-weight: bold;" />
+
+        <!-- Logout Button -->
+        <Button text="Logout" onAction="#handleLogout"
+                style="-fx-background-color: #FF4C4C; -fx-text-fill: white; -fx-font-weight: bold;" />
+    </VBox>
+
+    <!-- Main Content Area -->
+    <VBox fx:id="mainContent" spacing="20.0" alignment="CENTER"
+          AnchorPane.leftAnchor="210.0" AnchorPane.topAnchor="50.0" AnchorPane.rightAnchor="10.0" AnchorPane.bottomAnchor="10.0"
+          style="-fx-padding: 20;">
+
+        <!-- Dashboard Header -->
+        <HBox alignment="CENTER" spacing="10.0" style="-fx-padding: 10; -fx-background-color: #EAF4FC; -fx-border-color: #1E90FF; -fx-border-width: 2;">
+            <Label text="Welcome to the Admin Dashboard!" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+        </HBox>
+
+        <!-- Widgets Section -->
+        <GridPane hgap="20" vgap="20" alignment="CENTER" style="-fx-padding: 10;">
+            <!-- Total Scholarships Widget -->
+            <VBox style="-fx-border-color: #CCCCCC; -fx-border-width: 1; -fx-border-radius: 5; -fx-background-color: #F9F9F9; -fx-padding: 15; -fx-alignment: CENTER;" prefWidth="200" prefHeight="150">
+                <Label text="Total Scholarships" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+                <Label fx:id="totalScholarshipsLabel" text="50" style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #1E90FF;" />
+            </VBox>
+
+            <!-- Total Applications Widget -->
+            <VBox style="-fx-border-color: #CCCCCC; -fx-border-width: 1; -fx-border-radius: 5; -fx-background-color: #F9F9F9; -fx-padding: 15; -fx-alignment: CENTER;" prefWidth="200" prefHeight="150">
+                <Label text="Total Applications" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+                <Label fx:id="totalApplicationsLabel" text="120" style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #28A745;" />
+            </VBox>
+
+            <!-- Approved Applications Widget -->
+            <VBox style="-fx-border-color: #CCCCCC; -fx-border-width: 1; -fx-border-radius: 5; -fx-background-color: #F9F9F9; -fx-padding: 15; -fx-alignment: CENTER;" prefWidth="200" prefHeight="150">
+                <Label text="Approved Applications" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+                <Label fx:id="approvedApplicationsLabel" text="90" style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #FFC107;" />
+            </VBox>
+        </GridPane>
+
+        <!-- Announcements Section -->
+        <VBox spacing="10.0" style="-fx-padding: 15; -fx-background-color: #FEFBEA; -fx-border-color: #F1C232; -fx-border-width: 2;"
+              prefHeight="150.0" prefWidth="600.0">
+            <Label text="Announcements" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+            <Label fx:id="announcement1" text="1. Deadline for Fulbright Scholarship: 2024-11-30" style="-fx-font-size: 14px;" />
+            <Label fx:id="announcement2" text="2. New Scholarship Added: Erasmus Mundus 2025" style="-fx-font-size: 14px;" />
+            <Label fx:id="announcement3" text="3. Review Pending Applications Today!" style="-fx-font-size: 14px;" />
+        </VBox>
+
+    </VBox>
+
+</AnchorPane>

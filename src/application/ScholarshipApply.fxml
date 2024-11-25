@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ScrollPane?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="application.ScholarshipApplyController"
+            prefWidth="500.0" prefHeight="700.0" fitToWidth="true"
+            style="-fx-padding: 20; -fx-background-color: #F4F4F4; -fx-border-color: #1E2A38; -fx-border-width: 2; -fx-border-radius: 10;">
+    
+    <VBox spacing="20.0" alignment="CENTER" style="-fx-padding: 10;">
+        <!-- Title -->
+        <Label text="Scholarship Application" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #1E2A38;" />
+
+        <!-- Personal Information Section -->
+        <VBox spacing="15.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 10; -fx-border-color: #CCCCCC; -fx-border-width: 1; -fx-padding: 15;">
+            <Label text="Personal Information" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #007BFF;" />
+            <TextField fx:id="nameField" promptText="Full Name" style="-fx-background-color: #F9F9F9; -fx-border-radius: 5;" />
+            <TextField fx:id="fatherNameField" promptText="Father's Name" style="-fx-background-color: #F9F9F9; -fx-border-radius: 5;" />
+            <TextField fx:id="cnicField" promptText="CNIC Number" style="-fx-background-color: #F9F9F9; -fx-border-radius: 5;" />
+            <DatePicker fx:id="dobField" promptText="Date of Birth" style="-fx-background-color: #F9F9F9; -fx-border-radius: 5;" />
+            <TextField fx:id="addressField" promptText="Permanent Address" style="-fx-background-color: #F9F9F9; -fx-border-radius: 5;" />
+            <TextField fx:id="phoneField" promptText="Phone Number" style="-fx-background-color: #F9F9F9; -fx-border-radius: 5;" />
+            <TextField fx:id="emailField" promptText="Email" style="-fx-background-color: #F9F9F9; -fx-border-radius: 5;" />
+        </VBox>
+
+        <!-- Academic Information Section -->
+        <VBox spacing="15.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 10; -fx-border-color: #CCCCCC; -fx-border-width: 1; -fx-padding: 15;">
+            <Label text="Academic Information" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #28A745;" />
+            <TextField fx:id="universityField" promptText="University Name" style="-fx-background-color: #F9F9F9; -fx-border-radius: 5;" />
+            <TextField fx:id="degreeProgramField" promptText="Degree Program" style="-fx-background-color: #F9F9F9; -fx-border-radius: 5;" />
+            <TextField fx:id="cgpaField" promptText="Current CGPA" style="-fx-background-color: #F9F9F9; -fx-border-radius: 5;" />
+            <TextField fx:id="matricMarksField" promptText="Matriculation Marks (%)" style="-fx-background-color: #F9F9F9; -fx-border-radius: 5;" />
+            <TextField fx:id="interMarksField" promptText="Intermediate Marks (%)" style="-fx-background-color: #F9F9F9; -fx-border-radius: 5;" />
+            <TextArea fx:id="achievementsField" promptText="Academic Achievements" wrapText="true"
+                      style="-fx-background-color: #F9F9F9; -fx-border-radius: 5;" />
+        </VBox>
+
+        <!-- Additional Information Section -->
+        <VBox spacing="15.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 10; -fx-border-color: #CCCCCC; -fx-border-width: 1; -fx-padding: 15;">
+            <Label text="Additional Information" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #FF5733;" />
+            <TextArea fx:id="statementOfPurposeField" promptText="Statement of Purpose" wrapText="true"
+                      style="-fx-background-color: #F9F9F9; -fx-border-radius: 5;" />
+            <TextArea fx:id="extracurricularField" promptText="Extracurricular Activities" wrapText="true"
+                      style="-fx-background-color: #F9F9F9; -fx-border-radius: 5;" />
+        </VBox>
+
+        <!-- Document Upload Section -->
+        <VBox spacing="15.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 10; -fx-border-color: #CCCCCC; -fx-border-width: 1; -fx-padding: 15;">
+            <Label text="Upload Documents" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #FFC107;" />
+            
+            <HBox spacing="10">
+                <Button text="Upload Intermediate Certificate" onAction="#uploadIntermediateDocument"
+                        style="-fx-background-color: #007BFF; -fx-text-fill: white; -fx-font-weight: bold; -fx-border-radius: 5;" />
+                <Button text="Open" onAction="#openIntermediateDocument"
+                        style="-fx-background-color: #28A745; -fx-text-fill: white; -fx-font-weight: bold; -fx-border-radius: 5;" />
+            </HBox>
+            
+            <HBox spacing="10">
+                <Button text="Upload FSC Certificate" onAction="#uploadFscDocument"
+                        style="-fx-background-color: #007BFF; -fx-text-fill: white; -fx-font-weight: bold; -fx-border-radius: 5;" />
+                <Button text="Open" onAction="#openFscDocument"
+                        style="-fx-background-color: #28A745; -fx-text-fill: white; -fx-font-weight: bold; -fx-border-radius: 5;" />
+            </HBox>
+            
+            <HBox spacing="10">
+                <Button text="Upload IELTS Certificate" onAction="#uploadIeltsDocument"
+                        style="-fx-background-color: #007BFF; -fx-text-fill: white; -fx-font-weight: bold; -fx-border-radius: 5;" />
+                <Button text="Open" onAction="#openIeltsDocument"
+                        style="-fx-background-color: #28A745; -fx-text-fill: white; -fx-font-weight: bold; -fx-border-radius: 5;" />
+            </HBox>
+        </VBox>
+
+        <!-- Action Buttons -->
+        <HBox spacing="20.0" alignment="CENTER" style="-fx-padding: 10;">
+            <Button text="Submit Application" onAction="#submitApplication"
+                    style="-fx-background-color: #28A745; -fx-text-fill: white; -fx-font-weight: bold; -fx-border-radius: 5;" />
+            <Button text="Cancel" onAction="#closeWindow"
+                    style="-fx-background-color: #DC3545; -fx-text-fill: white; -fx-font-weight: bold; -fx-border-radius: 5;" />
+        </HBox>
+
+        <!-- Footer -->
+        <Label text="Powered by Scholarship Manager" style="-fx-font-size: 12px; -fx-text-fill: #777;" alignment="CENTER" />
+    </VBox>
+</ScrollPane>

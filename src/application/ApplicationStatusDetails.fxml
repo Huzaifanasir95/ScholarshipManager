@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="application.ApplicationStatusDetailsController" spacing="10.0" alignment="CENTER"
+      style="-fx-padding: 20; -fx-background-color: #F9F9F9; -fx-border-color: #CCCCCC; -fx-border-radius: 10;">
+    
+    <Label fx:id="scholarshipNameLabel" text="Scholarship Name" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+    <Label fx:id="statusLabel" text="Status: Pending" style="-fx-font-size: 16px;" />
+    <Label fx:id="remarksLabel" text="Remarks: - None -" style="-fx-font-size: 14px; -fx-text-fill: #555555;" />
+</VBox>

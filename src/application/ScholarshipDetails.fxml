@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+
+<VBox xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="application.ScholarshipDetailsController"
+      spacing="15.0" alignment="CENTER" style="-fx-padding: 20; -fx-background-color: #F9F9F9; -fx-border-radius: 10; -fx-border-color: #CCCCCC; -fx-border-width: 2;">
+
+    <!-- Scholarship Title -->
+    <Label fx:id="scholarshipName"
+           style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #1E2A38; -fx-padding: 10;" />
+
+    <!-- Scholarship Description -->
+    <VBox spacing="10.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 10; -fx-border-color: #CCCCCC; -fx-border-width: 1; -fx-padding: 10;">
+        <Label text="Description:" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #007BFF;" />
+        <Label fx:id="scholarshipDescription" wrapText="true"
+               style="-fx-font-size: 14px; -fx-text-fill: #333333;" />
+    </VBox>
+
+    <!-- Eligibility Criteria -->
+    <VBox spacing="10.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 10; -fx-border-color: #CCCCCC; -fx-border-width: 1; -fx-padding: 10;">
+        <Label text="Eligibility Criteria:" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #28A745;" />
+        <Label fx:id="scholarshipCriteria" wrapText="true"
+               style="-fx-font-size: 14px; -fx-text-fill: #333333;" />
+    </VBox>
+
+    <!-- Close Button -->
+    <HBox alignment="CENTER" spacing="20.0">
+        <Button text="Close" onAction="#closeWindow"
+                style="-fx-background-color: #DC3545; -fx-text-fill: white; -fx-font-weight: bold; -fx-border-radius: 5;" />
+    </HBox>
+
+    <!-- Footer -->
+    <Label text="Powered by Scholarship Manager" alignment="CENTER"
+           style="-fx-font-size: 12px; -fx-text-fill: #777;" />
+</VBox>
